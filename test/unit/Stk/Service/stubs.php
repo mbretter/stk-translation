@@ -45,7 +45,7 @@ namespace Stk\Service {
             return json_encode([
                 'user' => [
                     'validation' => [
-                        'username_required' => 'Der Benutzername is erforderlich!'
+                        'username_required' => 'Der Benutzername ist erforderlich!'
                     ]
                 ]
             ]);
@@ -56,6 +56,25 @@ namespace Stk\Service {
                 'user' => [
                     'validation' => [
                         'username_required' => 'The username is mandatory!'
+                    ]
+                ]
+            ]);
+        }
+
+        if ($file === 'single-file') {
+            return json_encode([
+                'de' => [
+                    'user' => [
+                        'validation' => [
+                            'username_required' => 'Der Benutzername ist erforderlich!'
+                        ]
+                    ]
+                ],
+                'en' => [
+                    'user' => [
+                        'validation' => [
+                            'username_required' => 'The username is mandatory!'
+                        ]
                     ]
                 ]
             ]);

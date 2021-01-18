@@ -78,6 +78,17 @@ class Translation implements Injectable
         return new self($translations);
     }
 
+    public static function loadFromFile(string $filename)
+    {
+        $translations = null;
+        $data = @file_get_contents($filename);
+        if ($data !== false) {
+            $translations = json_decode($data, true);
+        }
+
+        return new self($translations === null ? [] : $translations);
+    }
+
     /**
      * merge existing translations, return a new clone
      *

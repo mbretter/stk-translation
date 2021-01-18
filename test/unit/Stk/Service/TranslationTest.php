@@ -18,7 +18,28 @@ class TranslationTest extends TestCase
             'de' => [
                 'user' => [
                     'validation' => [
-                        'username_required' => 'Der Benutzername is erforderlich!',
+                        'username_required' => 'Der Benutzername ist erforderlich!',
+                    ],
+                ],
+            ],
+            'en' => [
+                'user' => [
+                    'validation' => [
+                        'username_required' => 'The username is mandatory!',
+                    ],
+                ],
+            ],
+        ], $tr->getTranslations());
+    }
+
+    public function testLoadFromFile()
+    {
+        $tr = Translation::loadFromFile('single-file');
+        $this->assertEquals([
+            'de' => [
+                'user' => [
+                    'validation' => [
+                        'username_required' => 'Der Benutzername ist erforderlich!',
                     ],
                 ],
             ],
