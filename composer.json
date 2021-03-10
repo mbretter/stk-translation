@@ -7,7 +7,7 @@
   "require": {
     "php": "^7.4|^8.0",
     "ext-json": "*",
-    "mbretter/stk-di": "^1.1",
+    "mbretter/stk-di": "^1|^2",
     "mbretter/stk-immutable": "^1|^2"
   },
   "require-dev": {
