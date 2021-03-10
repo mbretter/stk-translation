@@ -8,12 +8,12 @@
     "php": "^7.4|^8.0",
     "ext-json": "*",
     "mbretter/stk-di": "^1.1",
-    "mbretter/stk-immutable": "^1|^2",
-    "phpstan/phpstan": "^0.12.81"
+    "mbretter/stk-immutable": "^1|^2"
   },
   "require-dev": {
     "phpunit/phpunit": "^9",
-    "friendsofphp/php-cs-fixer": "^2.14"
+    "friendsofphp/php-cs-fixer": "^2.14",
+    "phpstan/phpstan": "^0.12.81"
   },
   "autoload-dev": {
     "psr-4": {
