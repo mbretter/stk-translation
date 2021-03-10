@@ -59,6 +59,9 @@ class Translation implements Injectable
                 $glob = rtrim($d, '/') . "/*.$lang.json";
 
                 $files = glob($glob);
+                if ($files === false) {
+                    continue;
+                }
 
                 foreach ($files as $file) {
                     $data = @file_get_contents($file);
@@ -78,6 +81,10 @@ class Translation implements Injectable
         return new self($translations);
     }
 
+    /**
+     * @param string $filename
+     * @return Translation
+     */
     public static function loadFromFile(string $filename)
     {
         $translations = null;
@@ -119,12 +126,12 @@ class Translation implements Injectable
     /**
      * get translation, return path concatenated with dots as string if no translation was found
      *
-     * @param $language
+     * @param string $language
      * @param mixed ...$path
      *
      * @return mixed|string
      */
-    public function getLang($language, ...$path)
+    public function getLang(string $language, ...$path)
     {
         array_unshift($path, $language);
 

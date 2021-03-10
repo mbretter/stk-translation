@@ -85,7 +85,7 @@ class TranslationTest extends TestCase
         $tr = Translation::loadFromJson(['my-translations'], ['de', 'en']);
         $this->assertEquals('The username is mandatory!', $tr->get('user', 'validation', 'username_required'));
         $tr->setLanguage('de');
-        $this->assertEquals('Der Benutzername is erforderlich!', $tr->get('user', 'validation', 'username_required'));
+        $this->assertEquals('Der Benutzername ist erforderlich!', $tr->get('user', 'validation', 'username_required'));
     }
 
     public function testGetNotFound()
@@ -111,7 +111,7 @@ class TranslationTest extends TestCase
             'de' => [
                 'user' => [
                     'validation' => [
-                        'username_required' => 'Der Benutzername is erforderlich!',
+                        'username_required' => 'Der Benutzername ist erforderlich!',
                     ],
                 ],
             ],
